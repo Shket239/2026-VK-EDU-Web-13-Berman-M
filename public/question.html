@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AskShket: почему Bootstrap перебивает мои стили?</title>
+  <link rel="icon" type="image/png" href="static/img/favicon.png">
+  <link rel="stylesheet" href="static/css/bootstrap.min.css">
+  <link rel="stylesheet" href="static/css/style.css">
+</head>
+<body>
+  <header class="site-header border-bottom mb-4">
+    <div class="container d-flex flex-wrap align-items-center gap-3 py-3">
+      <a href="index.html" class="logo">Ask<span>Shket</span></a>
+
+      <form class="header-search" role="search" action="#">
+        <input type="search" name="q" class="form-control" placeholder="Поиск" aria-label="Поиск">
+      </form>
+
+      <a href="ask.html" class="btn btn-success fw-bold">ASK!</a>
+
+      <div class="user-block ms-auto d-flex align-items-center gap-2">
+        <img class="avatar avatar--small" src="static/img/avatar-1.png" alt="Аватар Dr. Pepper" width="48" height="48">
+        <div>
+          <div class="user-block__name">Dr. Pepper</div>
+          <div class="user-block__links">
+            <a href="profile.html">настройки</a>
+            <a href="login.html">выйти</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="page container">
+    <div class="row g-4">
+      <main class="col-lg-9">
+        <article class="card question-card mb-4">
+          <div class="card-body d-flex gap-3">
+            <div class="question-card__side d-flex flex-column align-items-center gap-2">
+              <img class="avatar avatar--big" src="static/img/avatar-3.png" alt="Аватар V. Pupkin" width="80" height="80">
+              <div class="likes">
+              <button type="button" class="btn btn-sm btn-outline-success active" aria-label="Нравится" aria-pressed="true">&#9650;</button>
+              <span class="likes__count">12</span>
+              <button type="button" class="btn btn-sm btn-outline-danger" aria-label="Не нравится" aria-pressed="false">&#9660;</button>
+            </div>
+            </div>
+            <div class="question-card__body flex-grow-1">
+              <h1 class="question-full__title mb-3">Почему Bootstrap перебивает мои стили?</h1>
+              <p class="question-full__text">Пишу в style.css цвет для кнопки, а он не применяется. Пришлось везде ставить !important, но говорят так нельзя. Что я делаю не так?</p>
+              <p class="question-full__text">Подключаю вот так: сначала style.css, потом bootstrap. Bootstrap версии 5.3.</p>
+              <div class="question-card__footer d-flex flex-wrap align-items-center gap-3">
+                <a href="#answers">ответы (4)</a>
+                <div class="d-flex flex-wrap align-items-center gap-1">
+                  <span class="text-secondary">Теги:</span>
+                <a href="tag.html" class="tag">css</a>
+                <a href="tag.html" class="tag">bootstrap</a>
+                </div>
+                <span class="text-secondary ms-auto">спросил <a href="#">V. Pupkin</a>, сегодня в 12:40</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <section id="answers" class="mb-4">
+          <h2 class="h4 mb-3">Ответы (4)</h2>
+          <div class="d-flex flex-column gap-3">
+          <article class="card answer-card answer-card--correct">
+            <div class="card-body d-flex gap-3">
+              <div class="question-card__side d-flex flex-column align-items-center gap-2">
+                <img class="avatar avatar--small" src="static/img/avatar-4.png" alt="Аватар Mr. Freeman" width="48" height="48">
+                <div class="likes">
+              <button type="button" class="btn btn-sm btn-outline-success active" aria-label="Нравится" aria-pressed="true">&#9650;</button>
+              <span class="likes__count">15</span>
+              <button type="button" class="btn btn-sm btn-outline-danger" aria-label="Не нравится" aria-pressed="false">&#9660;</button>
+            </div>
+              </div>
+              <div class="question-card__body flex-grow-1">
+                <p class="answer-card__text">Свои стили надо подключать после bootstrap.min.css. Тогда при одинаковой специфичности сработает правило, которое идёт последним, и !important не понадобится.</p>
+                <div class="d-flex flex-wrap justify-content-between align-items-center gap-2">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="correct-1" checked>
+                    <label class="form-check-label" for="correct-1">Верный ответ</label>
+                  </div>
+                  <span class="answer-card__meta"><a href="#">Mr. Freeman</a>, 2 часа назад</span>
+                </div>
+              </div>
+            </div>
+          </article>
+          <article class="card answer-card">
+            <div class="card-body d-flex gap-3">
+              <div class="question-card__side d-flex flex-column align-items-center gap-2">
+                <img class="avatar avatar--small" src="static/img/avatar-3.png" alt="Аватар Dr. House" width="48" height="48">
+                <div class="likes">
+              <button type="button" class="btn btn-sm btn-outline-success" aria-label="Нравится" aria-pressed="false">&#9650;</button>
+              <span class="likes__count">6</span>
+              <button type="button" class="btn btn-sm btn-outline-danger" aria-label="Не нравится" aria-pressed="false">&#9660;</button>
+            </div>
+              </div>
+              <div class="question-card__body flex-grow-1">
+                <p class="answer-card__text">Ещё можно сделать селектор чуть точнее, например .header .btn вместо просто .btn. Но лучше сначала проверить порядок подключения файлов.</p>
+                <div class="d-flex flex-wrap justify-content-between align-items-center gap-2">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="correct-2">
+                    <label class="form-check-label" for="correct-2">Верный ответ</label>
+                  </div>
+                  <span class="answer-card__meta"><a href="#">Dr. House</a>, 1 час назад</span>
+                </div>
+              </div>
+            </div>
+          </article>
+          <article class="card answer-card">
+            <div class="card-body d-flex gap-3">
+              <div class="question-card__side d-flex flex-column align-items-center gap-2">
+                <img class="avatar avatar--small" src="static/img/avatar-6.png" alt="Аватар Queen Victoria" width="48" height="48">
+                <div class="likes">
+              <button type="button" class="btn btn-sm btn-outline-success" aria-label="Нравится" aria-pressed="false">&#9650;</button>
+              <span class="likes__count">2</span>
+              <button type="button" class="btn btn-sm btn-outline-danger" aria-label="Не нравится" aria-pressed="false">&#9660;</button>
+            </div>
+              </div>
+              <div class="question-card__body flex-grow-1">
+                <p class="answer-card__text">Открой DevTools, вкладка Elements, справа видно какое правило перечёркнуто и откуда пришло перебивающее. Сразу станет понятно.</p>
+                <div class="d-flex flex-wrap justify-content-between align-items-center gap-2">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="correct-3">
+                    <label class="form-check-label" for="correct-3">Верный ответ</label>
+                  </div>
+                  <span class="answer-card__meta"><a href="#">Queen Victoria</a>, 30 минут назад</span>
+                </div>
+              </div>
+            </div>
+          </article>
+          <article class="card answer-card">
+            <div class="card-body d-flex gap-3">
+              <div class="question-card__side d-flex flex-column align-items-center gap-2">
+                <img class="avatar avatar--small" src="static/img/avatar-5.png" alt="Аватар Bender" width="48" height="48">
+                <div class="likes">
+              <button type="button" class="btn btn-sm btn-outline-success" aria-label="Нравится" aria-pressed="false">&#9650;</button>
+              <span class="likes__count">-1</span>
+              <button type="button" class="btn btn-sm btn-outline-danger active" aria-label="Не нравится" aria-pressed="true">&#9660;</button>
+            </div>
+              </div>
+              <div class="question-card__body flex-grow-1">
+                <p class="answer-card__text">У меня было так же, оказалось что я просто опечатался в названии класса :)</p>
+                <div class="d-flex flex-wrap justify-content-between align-items-center gap-2">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="correct-4">
+                    <label class="form-check-label" for="correct-4">Верный ответ</label>
+                  </div>
+                  <span class="answer-card__meta"><a href="#">Bender</a>, 10 минут назад</span>
+                </div>
+              </div>
+            </div>
+          </article>
+          </div>
+        </section>
+
+        <nav aria-label="Страницы ответов">
+          <ul class="pagination justify-content-center mt-2">
+            <li class="page-item disabled"><span class="page-link">&laquo;</span></li>
+            <li class="page-item active" aria-current="page"><span class="page-link">1</span></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">&raquo;</a></li>
+          </ul>
+        </nav>
+
+        <form class="ask-form mt-3" action="#" method="post">
+          <label for="answer-text" class="form-label h5">Ваш ответ</label>
+          <textarea id="answer-text" name="text" class="form-control" rows="5" maxlength="5000" placeholder="Напишите ответ здесь"></textarea>
+          <div class="form-text mb-3">Пишите по делу, до 5000 символов.</div>
+          <button type="submit" class="btn btn-success px-4">Ответить</button>
+        </form>
+      </main>
+
+      <aside class="col-lg-3 d-flex flex-column gap-4">
+        <section class="sidebar-block">
+          <h2>Популярные теги</h2>
+          <div class="tags-cloud">
+            <a href="tag.html" class="t-big t-dark">python</a>
+            <a href="tag.html" class="t-mid t-red">MySQL</a>
+            <a href="tag.html" class="t-small t-blue">perl</a>
+            <a href="tag.html" class="t-big t-green">django</a>
+            <a href="tag.html" class="t-mid t-dark">TechnoPark</a>
+            <a href="tag.html" class="t-small t-orange">Firefox</a>
+            <a href="tag.html" class="t-mid t-purple">css</a>
+            <a href="tag.html" class="t-small t-dark">VK</a>
+            <a href="tag.html" class="t-mid t-blue">bootstrap</a>
+            <a href="tag.html" class="t-small t-red">nginx</a>
+          </div>
+        </section>
+
+        <section class="sidebar-block">
+          <h2>Лучшие участники</h2>
+          <ul class="members-list list-unstyled mb-0">
+            <li><a href="#">Mr. Freeman</a></li>
+            <li><a href="#">Dr. House</a></li>
+            <li><a href="#">Bender</a></li>
+            <li><a href="#">Queen Victoria</a></li>
+            <li><a href="#">V. Pupkin</a></li>
+          </ul>
+        </section>
+      </aside>
+    </div>
+  </div>
+
+  <footer class="site-footer border-top mt-5">
+    <div class="container py-3 d-flex flex-wrap justify-content-between gap-2">
+      <span>AskShket, 2026</span>
+      <span>Вопросы и ответы для тех, кто учится программировать</span>
+    </div>
+  </footer>
+
+  <script src="static/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

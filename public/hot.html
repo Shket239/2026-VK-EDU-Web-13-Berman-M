@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AskShket: популярные вопросы</title>
+  <link rel="icon" type="image/png" href="static/img/favicon.png">
+  <link rel="stylesheet" href="static/css/bootstrap.min.css">
+  <link rel="stylesheet" href="static/css/style.css">
+</head>
+<body>
+  <header class="site-header border-bottom mb-4">
+    <div class="container d-flex flex-wrap align-items-center gap-3 py-3">
+      <a href="index.html" class="logo">Ask<span>Shket</span></a>
+
+      <form class="header-search" role="search" action="#">
+        <input type="search" name="q" class="form-control" placeholder="Поиск" aria-label="Поиск">
+      </form>
+
+      <a href="ask.html" class="btn btn-success fw-bold">ASK!</a>
+
+      <div class="user-block ms-auto d-flex align-items-center gap-2">
+        <img class="avatar avatar--small" src="static/img/avatar-1.png" alt="Аватар Dr. Pepper" width="48" height="48">
+        <div>
+          <div class="user-block__name">Dr. Pepper</div>
+          <div class="user-block__links">
+            <a href="profile.html">настройки</a>
+            <a href="login.html">выйти</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="page container">
+    <div class="row g-4">
+      <main class="col-lg-9">
+        <div class="list-head d-flex flex-wrap align-items-baseline gap-3 mb-3">
+          <h1>Популярные вопросы</h1>
+          <a href="index.html">Новые</a>
+        </div>
+
+        <div class="questions d-flex flex-column gap-3 mb-3">
+        <article class="card question-card">
+          <div class="card-body d-flex gap-3">
+            <div class="question-card__side d-flex flex-column align-items-center gap-2">
+              <img class="avatar avatar--big" src="static/img/avatar-3.png" alt="Аватар V. Pupkin" width="80" height="80">
+              <div class="likes">
+              <button type="button" class="btn btn-sm btn-outline-success" aria-label="Нравится" aria-pressed="false">&#9650;</button>
+              <span class="likes__count">12</span>
+              <button type="button" class="btn btn-sm btn-outline-danger" aria-label="Не нравится" aria-pressed="false">&#9660;</button>
+            </div>
+            </div>
+            <div class="question-card__body flex-grow-1">
+              <h2 class="question-card__title h5"><a href="question.html" title="Почему Bootstrap перебивает мои стили?">Почему Bootstrap перебивает мои стили?</a></h2>
+              <p class="question-card__text">Пишу в style.css цвет для кнопки, а он не применяется. Пришлось везде ставить !important, но говорят так нельзя. Что я делаю не так?</p>
+              <div class="question-card__footer d-flex flex-wrap align-items-center gap-3">
+                <a href="question.html#answers">ответы (4)</a>
+                <div class="d-flex flex-wrap align-items-center gap-1">
+                  <span class="text-secondary">Теги:</span>
+                <a href="tag.html" class="tag">css</a>
+                <a href="tag.html" class="tag">bootstrap</a>
+                </div>
+                <span class="text-secondary ms-auto"><a href="#">V. Pupkin</a>, 20 минут назад</span>
+              </div>
+            </div>
+          </div>
+        </article>
+        <article class="card question-card">
+          <div class="card-body d-flex gap-3">
+            <div class="question-card__side d-flex flex-column align-items-center gap-2">
+              <img class="avatar avatar--big" src="static/img/avatar-4.png" alt="Аватар Queen Victoria" width="80" height="80">
+              <div class="likes">
+              <button type="button" class="btn btn-sm btn-outline-success" aria-label="Нравится" aria-pressed="false">&#9650;</button>
+              <span class="likes__count">7</span>
+              <button type="button" class="btn btn-sm btn-outline-danger" aria-label="Не нравится" aria-pressed="false">&#9660;</button>
+            </div>
+            </div>
+            <div class="question-card__body flex-grow-1">
+              <h2 class="question-card__title h5"><a href="question.html" title="Чем flexbox отличается от grid?">Чем flexbox отличается от grid?</a></h2>
+              <p class="question-card__text">Прошёл Flexbox Froggy, вроде понял flex. Но когда что лучше использовать, до сих пор непонятно. Можно на простом примере?</p>
+              <div class="question-card__footer d-flex flex-wrap align-items-center gap-3">
+                <a href="question.html#answers">ответы (2)</a>
+                <div class="d-flex flex-wrap align-items-center gap-1">
+                  <span class="text-secondary">Теги:</span>
+                <a href="tag.html" class="tag">css</a>
+                <a href="tag.html" class="tag">flexbox</a>
+                </div>
+                <span class="text-secondary ms-auto"><a href="#">Queen Victoria</a>, 1 час назад</span>
+              </div>
+            </div>
+          </div>
+        </article>
+        <article class="card question-card">
+          <div class="card-body d-flex gap-3">
+            <div class="question-card__side d-flex flex-column align-items-center gap-2">
+              <img class="avatar avatar--big" src="static/img/avatar-3.png" alt="Аватар V. Pupkin" width="80" height="80">
+              <div class="likes">
+              <button type="button" class="btn btn-sm btn-outline-success" aria-label="Нравится" aria-pressed="false">&#9650;</button>
+              <span class="likes__count">6</span>
+              <button type="button" class="btn btn-sm btn-outline-danger" aria-label="Не нравится" aria-pressed="false">&#9660;</button>
+            </div>
+            </div>
+            <div class="question-card__body flex-grow-1">
+              <h2 class="question-card__title h5"><a href="question.html" title="Что такое box-sizing: border-box?">Что такое box-sizing: border-box?</a></h2>
+              <p class="question-card__text">В примерах постоянно вижу это свойство в самом начале css файла. Зачем оно нужно и что будет если его убрать?</p>
+              <div class="question-card__footer d-flex flex-wrap align-items-center gap-3">
+                <a href="question.html#answers">ответы (2)</a>
+                <div class="d-flex flex-wrap align-items-center gap-1">
+                  <span class="text-secondary">Теги:</span>
+                <a href="tag.html" class="tag">css</a>
+                </div>
+                <span class="text-secondary ms-auto"><a href="#">V. Pupkin</a>, вчера в 18:02</span>
+              </div>
+            </div>
+          </div>
+        </article>
+        <article class="card question-card">
+          <div class="card-body d-flex gap-3">
+            <div class="question-card__side d-flex flex-column align-items-center gap-2">
+              <img class="avatar avatar--big" src="static/img/avatar-2.png" alt="Аватар Bender" width="80" height="80">
+              <div class="likes">
+              <button type="button" class="btn btn-sm btn-outline-success active" aria-label="Нравится" aria-pressed="true">&#9650;</button>
+              <span class="likes__count">5</span>
+              <button type="button" class="btn btn-sm btn-outline-danger" aria-label="Не нравится" aria-pressed="false">&#9660;</button>
+            </div>
+            </div>
+            <div class="question-card__body flex-grow-1">
+              <h2 class="question-card__title h5"><a href="question.html" title="Как построить лунный парк?">Как построить лунный парк?</a></h2>
+              <p class="question-card__text">Ребята, у меня проблема с лунным парком. Не могу найти блэкджек, хотя всё делал по инструкции. Может кто-то уже сталкивался?</p>
+              <div class="question-card__footer d-flex flex-wrap align-items-center gap-3">
+                <a href="question.html#answers">ответы (3)</a>
+                <div class="d-flex flex-wrap align-items-center gap-1">
+                  <span class="text-secondary">Теги:</span>
+                <a href="tag.html" class="tag">black-jack</a>
+                <a href="tag.html" class="tag">bender</a>
+                </div>
+                <span class="text-secondary ms-auto"><a href="#">Bender</a>, 5 минут назад</span>
+              </div>
+            </div>
+          </div>
+        </article>
+        <article class="card question-card">
+          <div class="card-body d-flex gap-3">
+            <div class="question-card__side d-flex flex-column align-items-center gap-2">
+              <img class="avatar avatar--big" src="static/img/avatar-6.png" alt="Аватар Dr. House" width="80" height="80">
+              <div class="likes">
+              <button type="button" class="btn btn-sm btn-outline-success" aria-label="Нравится" aria-pressed="false">&#9650;</button>
+              <span class="likes__count">4</span>
+              <button type="button" class="btn btn-sm btn-outline-danger" aria-label="Не нравится" aria-pressed="false">&#9660;</button>
+            </div>
+            </div>
+            <div class="question-card__body flex-grow-1">
+              <h2 class="question-card__title h5"><a href="question.html" title="Как сделать, чтобы футер был всегда внизу?">Как сделать, чтобы футер был всегда внизу?</a></h2>
+              <p class="question-card__text">Когда на странице мало контента, футер поднимается к середине экрана и выглядит странно. Как прибить его к низу без position: fixed?</p>
+              <div class="question-card__footer d-flex flex-wrap align-items-center gap-3">
+                <a href="question.html#answers">ответы (1)</a>
+                <div class="d-flex flex-wrap align-items-center gap-1">
+                  <span class="text-secondary">Теги:</span>
+                <a href="tag.html" class="tag">css</a>
+                <a href="tag.html" class="tag">html</a>
+                </div>
+                <span class="text-secondary ms-auto"><a href="#">Dr. House</a>, вчера в 21:15</span>
+              </div>
+            </div>
+          </div>
+        </article>
+        <article class="card question-card">
+          <div class="card-body d-flex gap-3">
+            <div class="question-card__side d-flex flex-column align-items-center gap-2">
+              <img class="avatar avatar--big" src="static/img/avatar-5.png" alt="Аватар Mr. Freeman" width="80" height="80">
+              <div class="likes">
+              <button type="button" class="btn btn-sm btn-outline-success" aria-label="Нравится" aria-pressed="false">&#9650;</button>
+              <span class="likes__count">3</span>
+              <button type="button" class="btn btn-sm btn-outline-danger active" aria-label="Не нравится" aria-pressed="true">&#9660;</button>
+            </div>
+            </div>
+            <div class="question-card__body flex-grow-1">
+              <h2 class="question-card__title h5"><a href="question.html" title="Не открывается localhost:8000 после runserver">Не открывается localhost:8000 после runserver</a></h2>
+              <p class="question-card__text">Запускаю python manage.py runserver, в консоли пишет что всё ок, а в браузере страница не грузится. Пробовал другой браузер, тоже самое.</p>
+              <div class="question-card__footer d-flex flex-wrap align-items-center gap-3">
+                <a href="question.html#answers">ответы (5)</a>
+                <div class="d-flex flex-wrap align-items-center gap-1">
+                  <span class="text-secondary">Теги:</span>
+                <a href="tag.html" class="tag">python</a>
+                <a href="tag.html" class="tag">django</a>
+                </div>
+                <span class="text-secondary ms-auto"><a href="#">Mr. Freeman</a>, 2 часа назад</span>
+              </div>
+            </div>
+          </div>
+        </article>
+        <article class="card question-card">
+          <div class="card-body d-flex gap-3">
+            <div class="question-card__side d-flex flex-column align-items-center gap-2">
+              <img class="avatar avatar--big" src="static/img/avatar-4.png" alt="Аватар Queen Victoria" width="80" height="80">
+              <div class="likes">
+              <button type="button" class="btn btn-sm btn-outline-success" aria-label="Нравится" aria-pressed="false">&#9650;</button>
+              <span class="likes__count">0</span>
+              <button type="button" class="btn btn-sm btn-outline-danger" aria-label="Не нравится" aria-pressed="false">&#9660;</button>
+            </div>
+            </div>
+            <div class="question-card__body flex-grow-1">
+              <h2 class="question-card__title h5"><a href="question.html" title="Как поднять nginx перед django?">Как поднять nginx перед django?</a></h2>
+              <p class="question-card__text">Хочу чтобы статику отдавал nginx, а всё остальное шло в gunicorn. Где почитать нормальный пример конфига?</p>
+              <div class="question-card__footer d-flex flex-wrap align-items-center gap-3">
+                <a href="question.html#answers">ответы (0)</a>
+                <div class="d-flex flex-wrap align-items-center gap-1">
+                  <span class="text-secondary">Теги:</span>
+                <a href="tag.html" class="tag">nginx</a>
+                <a href="tag.html" class="tag">django</a>
+                </div>
+                <span class="text-secondary ms-auto"><a href="#">Queen Victoria</a>, 23 октября</span>
+              </div>
+            </div>
+          </div>
+        </article>
+        </div>
+
+        <nav aria-label="Страницы вопросов">
+          <ul class="pagination justify-content-center mt-2">
+            <li class="page-item disabled"><span class="page-link">&laquo;</span></li>
+            <li class="page-item active" aria-current="page"><span class="page-link">1</span></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item disabled"><span class="page-link">...</span></li>
+            <li class="page-item"><a class="page-link" href="#">12</a></li>
+            <li class="page-item"><a class="page-link" href="#">&raquo;</a></li>
+          </ul>
+        </nav>
+      </main>
+
+      <aside class="col-lg-3 d-flex flex-column gap-4">
+        <section class="sidebar-block">
+          <h2>Популярные теги</h2>
+          <div class="tags-cloud">
+            <a href="tag.html" class="t-big t-dark">python</a>
+            <a href="tag.html" class="t-mid t-red">MySQL</a>
+            <a href="tag.html" class="t-small t-blue">perl</a>
+            <a href="tag.html" class="t-big t-green">django</a>
+            <a href="tag.html" class="t-mid t-dark">TechnoPark</a>
+            <a href="tag.html" class="t-small t-orange">Firefox</a>
+            <a href="tag.html" class="t-mid t-purple">css</a>
+            <a href="tag.html" class="t-small t-dark">VK</a>
+            <a href="tag.html" class="t-mid t-blue">bootstrap</a>
+            <a href="tag.html" class="t-small t-red">nginx</a>
+          </div>
+        </section>
+
+        <section class="sidebar-block">
+          <h2>Лучшие участники</h2>
+          <ul class="members-list list-unstyled mb-0">
+            <li><a href="#">Mr. Freeman</a></li>
+            <li><a href="#">Dr. House</a></li>
+            <li><a href="#">Bender</a></li>
+            <li><a href="#">Queen Victoria</a></li>
+            <li><a href="#">V. Pupkin</a></li>
+          </ul>
+        </section>
+      </aside>
+    </div>
+  </div>
+
+  <footer class="site-footer border-top mt-5">
+    <div class="container py-3 d-flex flex-wrap justify-content-between gap-2">
+      <span>AskShket, 2026</span>
+      <span>Вопросы и ответы для тех, кто учится программировать</span>
+    </div>
+  </footer>
+
+  <script src="static/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
