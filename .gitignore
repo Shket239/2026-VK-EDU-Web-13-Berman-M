@@ -1,0 +1,29 @@
+# ОС
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE
+.idea/
+.vscode/
+*.swp
+
+# python
+__pycache__/
+*.py[cod]
+venv/
+.venv/
+env/
+.env
+
+# django
+*.sqlite3
+db.sqlite3
+media/
+staticfiles/
+
+# прочее
+*.log
+node_modules/
+dist/
+build/
