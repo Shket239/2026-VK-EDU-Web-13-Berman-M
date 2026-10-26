@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AskShket</title>
+  <link rel="icon" type="image/png" href="static/img/favicon.png">
+  <link rel="stylesheet" href="static/css/bootstrap.min.css">
+  <link rel="stylesheet" href="static/css/style.css">
+</head>
+<body>
+  <header class="site-header border-bottom mb-4">
+    <div class="container d-flex flex-wrap align-items-center gap-3 py-3">
+      <a href="index.html" class="logo">Ask<span>Shket</span></a>
+
+      <form class="header-search" role="search" action="#">
+        <input type="search" name="q" class="form-control" placeholder="Поиск" aria-label="Поиск">
+      </form>
+
+      <a href="ask.html" class="btn btn-success fw-bold">ASK!</a>
+
+      <div class="user-block ms-auto d-flex align-items-center gap-2">
+        <img class="avatar avatar--small" src="static/img/avatar-1.png" alt="Аватар Dr. Pepper" width="48" height="48">
+        <div>
+          <div class="user-block__name">Dr. Pepper</div>
+          <div class="user-block__links">
+            <a href="profile.html">настройки</a>
+            <a href="login.html">выйти</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="page container">
+    <div class="row g-4">
+      <main class="col-lg-9">
+        <!-- сюда будет вставляться контент страницы (потом сделаем шаблоном django) -->
+      </main>
+
+      <aside class="col-lg-3 d-flex flex-column gap-4">
+        <section class="sidebar-block">
+          <h2>Популярные теги</h2>
+          <div class="tags-cloud">
+            <a href="tag.html" class="t-big t-dark">python</a>
+            <a href="tag.html" class="t-mid t-red">MySQL</a>
+            <a href="tag.html" class="t-small t-blue">perl</a>
+            <a href="tag.html" class="t-big t-green">django</a>
+            <a href="tag.html" class="t-mid t-dark">TechnoPark</a>
+            <a href="tag.html" class="t-small t-orange">Firefox</a>
+            <a href="tag.html" class="t-mid t-purple">css</a>
+            <a href="tag.html" class="t-small t-dark">VK</a>
+            <a href="tag.html" class="t-mid t-blue">bootstrap</a>
+            <a href="tag.html" class="t-small t-red">nginx</a>
+          </div>
+        </section>
+
+        <section class="sidebar-block">
+          <h2>Лучшие участники</h2>
+          <ul class="members-list list-unstyled mb-0">
+            <li><a href="#">Mr. Freeman</a></li>
+            <li><a href="#">Dr. House</a></li>
+            <li><a href="#">Bender</a></li>
+            <li><a href="#">Queen Victoria</a></li>
+            <li><a href="#">V. Pupkin</a></li>
+          </ul>
+        </section>
+      </aside>
+    </div>
+  </div>
+
+  <footer class="site-footer border-top mt-5">
+    <div class="container py-3 d-flex flex-wrap justify-content-between gap-2">
+      <span>AskShket, 2026</span>
+      <span>Вопросы и ответы для тех, кто учится программировать</span>
+    </div>
+  </footer>
+
+  <script src="static/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
