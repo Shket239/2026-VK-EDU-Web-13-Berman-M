@@ -1,0 +1,26 @@
+{% extends "core/base.html" %}
+{% load static %}
+{% block title %}AskShket: {{ question.title }}{% endblock %}
+{% block extra_css %}
+  <link rel="stylesheet" href="{% static 'questions/css/questions.css' %}">
+  <link rel="stylesheet" href="{% static 'core/css/forms.css' %}">
+{% endblock %}
+{% block content %}
+{% include "questions/includes/question_card.html" with full=True %}
+<section id="answers" class="mb-4">
+  <h2 class="h4 mb-3">Ответы ({{ page_obj.paginator.count }})</h2>
+  <div class="d-flex flex-column gap-3">
+    {% for answer in page_obj %}
+      {% include "questions/includes/answer_card.html" %}
+    {% empty %}<p>Ответов пока нет.</p>{% endfor %}
+  </div>
+</section>
+{% include "core/includes/pagination.html" with label="Страницы ответов" anchor="#answers" %}
+<form class="ask-form mt-3" action="{% url 'questions:question' question.id %}" method="post">
+  {% csrf_token %}
+  <label for="answer-text" class="form-label h5">Ваш ответ</label>
+  <textarea id="answer-text" name="text" class="form-control" rows="5" maxlength="5000" placeholder="Напишите ответ здесь"></textarea>
+  <div class="form-text mb-3">Пишите по делу, до 5000 символов.</div>
+  <button type="submit" class="btn btn-success px-4">Ответить</button>
+</form>
+{% endblock %}

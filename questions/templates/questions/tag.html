@@ -1,0 +1,4 @@
+{% extends "questions/list.html" %}
+{% block list_title %}Тег: {{ tag }}{% endblock %}
+{% block heading %}Тег: {{ tag }}{% endblock %}
+{% block list_navigation %}<a href="{% url 'questions:index' %}">Все вопросы</a>{% endblock %}

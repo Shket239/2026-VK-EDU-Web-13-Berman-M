@@ -1,0 +1,16 @@
+<aside class="col-lg-3 d-flex flex-column gap-4">
+  <section class="sidebar-block">
+    <h2>Популярные теги</h2>
+    <ul class="tags-cloud">
+      {% for name, style in popular_tags %}
+        <li><a href="{% url 'questions:tag' name %}" class="{{ style }}">{{ name }}</a></li>
+      {% endfor %}
+    </ul>
+  </section>
+  <section class="sidebar-block">
+    <h2>Лучшие участники</h2>
+    <ul class="members-list list-unstyled mb-0">
+      {% for member in best_members %}<li>{{ member.name }}</li>{% endfor %}
+    </ul>
+  </section>
+</aside>

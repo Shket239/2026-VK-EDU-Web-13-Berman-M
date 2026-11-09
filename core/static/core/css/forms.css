@@ -1,0 +1,18 @@
+/* форма вопроса */
+
+.ask-form {
+  background-color: #fff;
+  border: 1px solid var(--card-border);
+  border-radius: 8px;
+  padding: 24px;
+}
+
+.ask-form textarea {
+  resize: vertical;
+}
+
+/* вход и регистрация */
+
+.auth-box {
+  max-width: 560px;
+}

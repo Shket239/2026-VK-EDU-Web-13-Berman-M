@@ -1,0 +1,62 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}AskShket{% endblock %}</title>
+  <link rel="icon" type="image/png" href="{% static 'core/img/favicon.png' %}">
+  <link rel="stylesheet" href="{% static 'core/css/bootstrap.min.css' %}">
+  <link rel="stylesheet" href="{% static 'core/css/style.css' %}">
+  {% block extra_css %}{% endblock %}
+</head>
+<body>
+  <header class="site-header border-bottom mb-4">
+    <div class="container d-flex flex-wrap align-items-center gap-3 py-3">
+      <a href="{% url 'questions:index' %}" class="logo">Ask<span>Shket</span></a>
+
+      <form class="header-search" role="search" action="{% url 'questions:index' %}">
+        <input type="search" name="q" class="form-control" placeholder="Поиск (скоро)" disabled aria-label="Поиск">
+      </form>
+
+      <a href="{% url 'questions:ask' %}" class="btn btn-success fw-bold">ASK!</a>
+
+      <div class="user-block ms-auto d-flex align-items-center gap-2">
+        {% if guest %}
+          <a href="{% url 'core:login' %}" class="btn btn-outline-success btn-sm">Войти</a>
+          <a href="{% url 'core:signup' %}" class="btn btn-success btn-sm">Регистрация</a>
+        {% else %}
+          {% include "core/includes/avatar.html" with person=demo_user size="small" %}
+          <div>
+            <div class="user-block__name">{{ demo_user.name }}</div>
+            <div class="user-block__links">
+              <a href="{% url 'core:profile' %}">настройки</a>
+              <a href="{% url 'core:login' %}">войти другим пользователем</a>
+            </div>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </header>
+
+  <div class="page container">
+    <div class="row g-4">
+      <main class="col-lg-9">
+        {% include "core/includes/notice.html" %}
+        {% block content %}{% endblock %}
+      </main>
+
+      {% include "core/includes/sidebar.html" %}
+    </div>
+  </div>
+
+  <footer class="site-footer border-top mt-5">
+    <div class="container py-3 d-flex flex-wrap justify-content-between gap-2">
+      <span>AskShket, 2026</span>
+      <span>Вопросы и ответы для тех, кто учится программировать</span>
+    </div>
+  </footer>
+
+  <script src="{% static 'core/js/bootstrap.bundle.min.js' %}"></script>
+</body>
+</html>

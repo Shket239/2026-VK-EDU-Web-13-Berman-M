@@ -1,0 +1,44 @@
+{% extends "core/base.html" %}
+{% load static %}
+{% block title %}AskShket: профиль{% endblock %}
+{% block extra_css %}<link rel="stylesheet" href="{% static 'core/css/forms.css' %}"><link rel="stylesheet" href="{% static 'core/css/profile.css' %}">{% endblock %}
+{% block content %}
+<h1 class="mb-3">Настройки: Dr. Pepper</h1>
+
+
+
+        <form class="ask-form" action="{% url 'core:profile' %}" method="post" enctype="multipart/form-data">
+          {% csrf_token %}
+          <div class="row g-4">
+            <div class="col-md-8">
+              <div class="mb-3">
+                <label for="pr-login" class="form-label">Логин</label>
+                <input type="text" id="pr-login" name="login" class="form-control" value="dr_pepper" readonly>
+                <div class="form-text">Логин поменять нельзя.</div>
+              </div>
+
+              <div class="mb-3">
+                <label for="pr-email" class="form-label">Email</label>
+                <input type="email" id="pr-email" name="email" class="form-control" value="dr.pepper@mail.ru" maxlength="254">
+              </div>
+
+              <div class="mb-3">
+                <label for="pr-nick" class="form-label">Никнейм</label>
+                <input type="text" id="pr-nick" name="nickname" class="form-control" value="Dr. Pepper" maxlength="40">
+
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="profile-avatar text-center">
+                <img class="avatar profile-avatar__img mb-3" src="{% static 'core/img/avatar-1.png' %}" alt="Текущая аватарка" width="160" height="160">
+                <label for="pr-avatar" class="form-label d-block">Новая аватарка</label>
+                <input type="file" id="pr-avatar" name="avatar" class="form-control" accept="image/png, image/jpeg">
+                <div class="form-text">PNG или JPG, до 2 МБ.</div>
+              </div>
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-success px-4 mt-3">Сохранить</button>
+        </form>
+{% endblock %}
