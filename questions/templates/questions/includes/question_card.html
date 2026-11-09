@@ -1,0 +1,22 @@
+<article class="card question-card{% if full %} mb-4{% endif %}">
+  <div class="card-body d-flex gap-3">
+    <div class="question-card__side d-flex flex-column align-items-center gap-2">
+      {% include "core/includes/avatar.html" with person=question.author size="big" %}
+      {% include "questions/includes/votes.html" with rating=question.rating %}
+    </div>
+    <div class="question-card__body flex-grow-1">
+      {% if full %}
+        <h1 class="question-full__title mb-3">{{ question.title }}</h1>
+        <p class="question-full__text">{{ question.text }}</p>
+      {% else %}
+        <h2 class="question-card__title h5"><a href="{% url 'questions:question' question.id %}" title="{{ question.title }}">{{ question.title }}</a></h2>
+        <p class="question-card__text">{{ question.text }}</p>
+      {% endif %}
+      <div class="question-card__footer d-flex flex-wrap align-items-center gap-3">
+        <a href="{% url 'questions:question' question.id %}#answers">ответы ({{ question.answer_count }})</a>
+        {% include "questions/includes/tags.html" %}
+        <span class="text-secondary ms-auto">{{ question.author.name }}</span>
+      </div>
+    </div>
+  </div>
+</article>

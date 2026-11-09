@@ -1,0 +1,155 @@
+/* свои стили, подключаются после bootstrap */
+
+:root {
+  --main-color: #198754;
+  --main-color-hover: #146c43;
+  --text-muted: #6c757d;
+  --card-border: #dee2e6;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  background-color: #f6f7f9;
+}
+
+.page {
+  flex: 1 0 auto;
+}
+
+a {
+  color: var(--main-color);
+}
+
+a:hover {
+  color: var(--main-color-hover);
+}
+
+/* шапка */
+
+.site-header {
+  background-color: #fff;
+}
+
+.logo {
+  font-size: 28px;
+  font-weight: 700;
+  color: #212529;
+  text-decoration: none;
+}
+
+.logo span {
+  color: var(--main-color);
+}
+
+.logo:hover {
+  color: #212529;
+}
+
+.header-search {
+  flex: 1 1 200px;
+  max-width: 400px;
+}
+
+.user-block__name {
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.user-block__links a {
+  font-size: 14px;
+  margin-right: 8px;
+}
+
+/* аватарки */
+
+.avatar {
+  border-radius: 8px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.avatar--small {
+  width: 48px;
+  height: 48px;
+}
+
+.avatar--big {
+  width: 80px;
+  height: 80px;
+}
+
+/* сайдбар */
+
+.sidebar-block {
+  background-color: #fff;
+  border: 1px solid var(--card-border);
+  border-radius: 8px;
+  padding: 16px;
+}
+
+.sidebar-block h2 {
+  font-size: 20px;
+  margin-bottom: 12px;
+}
+
+.tags-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 12px;
+}
+
+.tags-cloud a {
+  text-decoration: none;
+}
+
+.tags-cloud a:hover {
+  text-decoration: underline;
+}
+
+.tags-cloud .t-big {
+  font-size: 20px;
+}
+
+.tags-cloud .t-mid {
+  font-size: 16px;
+}
+
+.tags-cloud .t-small {
+  font-size: 13px;
+}
+
+.t-red { color: #dc3545; }
+.t-green { color: #198754; }
+.t-blue { color: #0d6efd; }
+.t-orange { color: #fd7e14; }
+.t-dark { color: #212529; }
+.t-purple { color: #6f42c1; }
+
+.members-list li {
+  margin-bottom: 6px;
+}
+
+/* подвал */
+
+.site-footer {
+  flex-shrink: 0;
+  background-color: #fff;
+  color: var(--text-muted);
+  font-size: 14px;
+}
+
+
+.tags-cloud { list-style: none; margin: 0; padding: 0; }
+.avatar-placeholder { display: inline-flex; align-items: center; justify-content: center;
+  background: #e9f5ee; color: #146c43; font-weight: 700; }
+main h1 { font-size: 28px; }
+@media (max-width: 575px) {
+  .logo { font-size: 24px; }
+  .header-search { order: 5; max-width: none; flex-basis: 100%; }
+}

@@ -1,0 +1,18 @@
+{% extends "core/base.html" %}
+{% load static %}
+{% block title %}AskShket: {% block list_title %}{% endblock %}{% endblock %}
+{% block extra_css %}<link rel="stylesheet" href="{% static 'questions/css/questions.css' %}">{% endblock %}
+{% block content %}
+<div class="list-head d-flex flex-wrap align-items-baseline gap-3 mb-3">
+  <h1>{% block heading %}{% endblock %}</h1>
+  {% block list_navigation %}{% endblock %}
+</div>
+<div class="questions d-flex flex-column gap-3 mb-3">
+  {% for question in page_obj %}
+    {% include "questions/includes/question_card.html" %}
+  {% empty %}
+    <p class="alert alert-info">По этому тегу пока нет вопросов.</p>
+  {% endfor %}
+</div>
+{% include "core/includes/pagination.html" with label="Страницы вопросов" %}
+{% endblock %}

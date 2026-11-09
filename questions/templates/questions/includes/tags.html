@@ -1,0 +1,6 @@
+<div class="d-flex flex-wrap align-items-center gap-1">
+  <span class="text-secondary">Теги:</span>
+  <ul class="list-unstyled d-flex flex-wrap gap-1 mb-0">
+    {% for tag in question.tags %}<li><a href="{% url 'questions:tag' tag %}" class="tag">{{ tag }}</a></li>{% endfor %}
+  </ul>
+</div>

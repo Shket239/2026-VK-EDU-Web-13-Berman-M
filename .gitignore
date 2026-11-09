@@ -27,3 +27,6 @@ staticfiles/
 node_modules/
 dist/
 build/
+
+# Collected static files; app static directories are source files.
+/static/

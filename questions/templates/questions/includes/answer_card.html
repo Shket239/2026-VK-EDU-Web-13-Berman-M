@@ -1,0 +1,18 @@
+<article class="card answer-card{% if answer.correct %} answer-card--correct{% endif %}">
+  <div class="card-body d-flex gap-3">
+    <div class="question-card__side d-flex flex-column align-items-center gap-2">
+      {% include "core/includes/avatar.html" with person=answer.author size="small" %}
+      {% include "questions/includes/votes.html" with rating=answer.rating %}
+    </div>
+    <div class="question-card__body flex-grow-1">
+      <p class="answer-card__text">{{ answer.text }}</p>
+      <div class="d-flex flex-wrap justify-content-between align-items-center gap-2">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="correct-{{ answer.id }}" {% if answer.correct %}checked{% endif %} disabled>
+          <label class="form-check-label" for="correct-{{ answer.id }}">Верный ответ</label>
+        </div>
+        <span class="answer-card__meta">{{ answer.author.name }}</span>
+      </div>
+    </div>
+  </div>
+</article>

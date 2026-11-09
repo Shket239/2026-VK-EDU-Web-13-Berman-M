@@ -1,0 +1,34 @@
+{% extends "core/base.html" %}
+{% load static %}
+{% block title %}AskShket: задать вопрос{% endblock %}
+{% block extra_css %}<link rel="stylesheet" href="{% static 'core/css/forms.css' %}">{% endblock %}
+{% block content %}
+<h1 class="mb-3">Задать вопрос</h1>
+
+        <form class="ask-form" action="{% url 'questions:ask' %}" method="post">
+          {% csrf_token %}
+          <div class="mb-3">
+            <label for="question-title" class="form-label">Заголовок</label>
+            <input type="text" id="question-title" name="title" class="form-control" placeholder="Например: как отцентровать div?" maxlength="150">
+            <div class="form-text">Коротко опишите суть вопроса, не больше 150 символов.</div>
+          </div>
+
+          <div class="mb-3">
+            <label for="question-text" class="form-label">Текст вопроса</label>
+            <textarea id="question-text" name="text" class="form-control" rows="8" maxlength="5000" placeholder="Подробно опишите проблему, что пробовали и что не получилось"></textarea>
+            <div class="form-text">До 5000 символов.</div>
+          </div>
+
+          <div class="mb-4">
+            <label for="question-tags" class="form-label">Теги</label>
+            <input type="text" id="question-tags" name="tags" class="form-control">
+
+            <div class="form-text">Через запятую, например: python, django.</div>
+          </div>
+
+          <div class="d-flex flex-wrap gap-2">
+            <button type="submit" class="btn btn-success px-4">Спросить!</button>
+            <a href="{% url 'questions:index' %}" class="btn btn-outline-secondary">Отмена</a>
+          </div>
+        </form>
+{% endblock %}
